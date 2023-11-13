@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://kit.fontawesome.com/b81ab94332.js" crossorigin="anonymous"></script>
+    <title>Contact</title>
+</head>
+
+<body class="fade-in">
+
+    <header>
+        <h1>Portfolio</h1>
+        <input type="checkbox" id="nav-toggle" class="toggle">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="skillSearch.html">Search Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="skills.html">Skills</a></li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-label">
+            <span></span>
+        </label>
+    </header>
+    <main>
+        <div class="container">
+            <div class="box">
+                <h2 class="share">Share your email to get new updates and receive new posts by email.</h2>
+
+                <div class="name">
+                    <input type="text" id="name" placeholder="  Enter your name" size="20" aria-label="enter your name">
+                </div>
+
+                <div class="email">
+                    <input type="email" id="email" placeholder="  YourBestEmail@example.uk" size="30" maxlength="250"
+                        aria-label="enter your email">
+                </div>
+
+                <div class="button">
+                    <button id="button" onClick="message()">Send</button>
+                </div>
+
+                <div class="message">
+                    <div class="success" id="success">Email was sent successfully!</div>
+                    <div class="error" id="error">Fields cannot be empty!</div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="reach">
+            <p class="title">
+                Reach out on
+            </p>
+            <p>
+                <i class="fa-solid fa-mobile-screen fa-2xl"></i> (0044) 5565 5655 655
+            </p>
+
+
+            <div class="icons">
+                <p>
+                    <!-- this link will open in the same tab icon-->
+                    <a href="https://www.linkedin.com/in/dorota-paczkowska-821864146/"><i
+                            class="fa-brands fa-linkedin fa-2xl"></i></a>
+                </p>
+                <p>
+                    <!-- first link will open in new tab text-->
+                    <a href="https://www.linkedin.com/in/dorota-paczkowska-821864146/" target="_blank">LinkedIn</a>
+                </p>
+
+                <p>
+                    <a href=" https://github.com/snayperka?tab=overview&from=2023-04-01&to=2023-04-11"><i
+                            class="fa-brands fa-github fa-2xl"></i></a>
+                </p>
+
+                <p>
+                    <a href=" https://github.com/snayperka?tab=overview&from=2023-04-01&to=2023-04-11"
+                        target="_blank">Github</a>
+                </p>
+
+
+                <p>
+                    <a href="https://www.facebook.com/dorita.paczkowska"><i
+                            class="fa-brands fa-facebook fa-2xl"></i></a>
+                </p>
+
+                <p>
+                    <a href="https://www.facebook.com/dorita.paczkowska" target="_blank">Facebook</a>
+                </p>
+            </div>
+
+            <p>
+                <i class="fa-regular fa-envelope fa-2xl"></i>
+                Email: p2594542@dmu.ac.uk
+            </p>
+        </div>
+
+
+
+    </main>
+    <footer>
+        &copy; Copyright 2023 Dorota Paczkowska.
+    </footer>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

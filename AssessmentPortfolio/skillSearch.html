@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Search</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body class="fade-in">
+    <header>
+        <h1>Portfolio</h1>
+        <input type="checkbox" id="nav-toggle" class="toggle">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="skillSearch.html">Search Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="skills.html">Skills</a></li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-label">
+            <span></span>
+        </label>
+
+
+
+
+    </header>
+    <main>
+
+        <section class="search-area">
+            <h2>Looking for specific skills? Search my skills.</h2>
+            <label for="search">Search:</label>
+            <input type="search" id="search" placeholder="enter skill" aria-label="search">
+            <button id="btnSearch">GO</button>
+        </section>
+
+
+        <ul id="results">
+
+        </ul>
+    </main>
+    <footer>
+        &copy; Copyright 2023 Dorota Paczkowska.
+    </footer>
+    <script src="js/search.js"></script>
+    <script src="js/data.js"></script>
+</body>
+
+</html>

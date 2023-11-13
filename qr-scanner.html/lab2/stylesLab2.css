@@ -1,0 +1,16 @@
+nav {
+    display: flex;
+    background-color: hsl(212, 45%, 89%);
+}
+
+nav a {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(220, 15%, 55%);
+    padding: 1em;
+    margin: 1em;
+
+    transition: background-color 0.7s;
+}
+nav a:hover {
+    background-color: hsl(218, 44%, 22%);
+  }

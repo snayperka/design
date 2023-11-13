@@ -1,0 +1,853 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+.toggle {
+	display: none;
+}
+
+/*Navigation styling*/
+.nav-label {
+	position: absolute;
+	top: 0;
+	right: 1em;
+	margin-left: 1em;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.nav-label span,
+.nav-label span::before,
+.nav-label span::after {
+	display: block;
+	background: white;
+	height: 2px;
+	width: 2em;
+	border-radius: 2px;
+	position: relative;
+}
+
+.nav-label span::before,
+.nav-label span::after {
+	content: '';
+	position: absolute;
+}
+
+.nav-label span::before {
+	bottom: 7px;
+}
+
+.nav-label span::after {
+	top: 7px;
+}
+
+nav {
+	position: absolute;
+	text-align: right;
+	top: 100%;
+	right: 0;
+	background: rgb(165, 141, 239, 0.85);
+	transform: scale(1, 0);
+	transform-origin: top;
+	transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+}
+
+nav li {
+	margin-bottom: 1em;
+	margin-right: 1em;
+	color: aliceblue;
+	border-radius: 10px;
+
+}
+
+header nav a {
+	transition: color 0.5s, opacity 150ms ease-in-out;
+	text-decoration: none;
+	font-size: 1em;
+	color: white;
+	text-transform: uppercase;
+	opacity: 0;
+}
+
+
+
+
+/*The sign ~ looks for any preceeding sibling */
+.toggle:checked~nav {
+	transform: scale(1, 1);
+}
+
+/*when the checkbox is check - dropdown menu will be visible*/
+.toggle:checked~nav a {
+	opacity: 1;
+	transition: opacity 250ms ease-in-out 250ms;
+}
+
+/*header styling*/
+header {
+	background: rgb(165, 141, 239, 0.85);
+	text-align: center;
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: auto;
+}
+
+/* Styling for consistency of all pages*/
+
+/*body styling*/
+body {
+	margin: 0 auto;
+	background-color: rgb(109, 34, 146);
+	/*used if image is not available*/
+	background-repeat: no-repeat;
+	background-size: 50% 50%;
+	color: whitesmoke;
+	display: grid;
+	grid-template-rows: auto;
+}
+
+
+.fade-in {
+	position: relative;
+	opacity: 0;
+	animation: fade-in 2s forwards;
+}
+
+@keyframes fade-in {
+	to {
+		opacity: 1;
+	}
+
+}
+
+main {
+	justify-content: space-around;
+	position: absolute;
+	left: 10px;
+	right: 10px;
+	top: 50px;
+	text-align: center;
+
+}
+
+h1 {
+	margin-top: auto;
+	font-family: "Play", sans-serif;
+	font-size: 1em;
+}
+
+
+h2 {
+	/*check if margin is needed?*/
+	font-family: 'Play', 'Georgia', 'Times New Roman', Times, serif;
+	margin: 1rem;
+	font-size: 1.2em;
+	margin-bottom: .25em;
+}
+
+h3 {
+	font-family: "Play", sans-serif;
+	font-size: 0.7rem;
+}
+
+.title {
+	color: rgb(212, 0, 255);
+	margin-top: 14px;
+	font-size: 1.7em;
+}
+
+p {
+	font-size: .8rem;
+	margin-top: 1rem;
+}
+
+p a {
+
+	color: rgb(246, 239, 239);
+	transition: color 0.2s;
+	margin: 5px 5px;
+}
+
+footer {
+	margin-top: 57em;
+	text-align: center;
+	font-size: 1em;
+	display: flex;
+	padding: 40px 50px
+}
+
+.front p {
+	font-size: 2em;
+	font-family: "Play", sans-serif;
+	animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/*search styles*/
+.search-wrapper {
+	display: flex;
+	flex-direction: column;
+	margin: .25rem;
+}
+
+input {
+	font-size: 1em;
+}
+
+.article {
+	display: grid;
+	grid-template-columns: auto;
+	margin-top: 1rem;
+}
+
+details {
+	border: 1px solid white;
+	padding: .5rem;
+}
+
+section {
+
+	margin-top: .5rem;
+	border: 1px solid white;
+
+}
+
+label {
+	cursor: default;
+	font-size: 1.7em;
+}
+
+.hide {
+	display: none;
+}
+
+
+#results {
+	list-style: none;
+}
+
+/*email styles*/
+.container {
+	margin-top: 1rem;
+	width: 400px;
+	height: auto;
+	border-radius: 10px;
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
+}
+
+.box {
+	margin-top: 1.9rem;
+	width: 600px;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.name {
+	width: 100%;
+	margin-bottom: 15px;
+
+}
+
+.name input {
+	width: 100%;
+	border: none;
+	outline: none;
+	font-size: 1.2em;
+	border-radius: 1000px;
+}
+
+.email {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.email input {
+	width: 100%;
+	border: none;
+	outline: none;
+	font-size: 1.2em;
+	border-radius: 1000px;
+}
+
+#button {
+
+	width: 50%;
+	border-radius: 100px;
+	height: 2.5em;
+	font-size: 1.2em;
+
+}
+
+#button input {
+	width: 100%;
+	border: none;
+	margin: 20px;
+	outline: none;
+	font-size: 3em;
+	font-size: 1.5em;
+	height: 2em;
+}
+
+::placeholder {
+	margin-left: 10px;
+}
+
+.message {
+	width: 100%;
+	position: relative;
+	margin-bottom: 60px;
+	display: flex;
+	justify-content: center;
+}
+
+.message .success {
+	font-size: 1.5em;
+	color: green;
+	position: absolute;
+	animation: button .2s linear;
+	display: none;
+}
+
+.message .error {
+	font-size: 1.5em;
+	color: red;
+	position: absolute;
+	animation: button .2s linear;
+	display: none;
+}
+
+.reach {
+	margin-top: 15rem;
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+img.laptop {
+	width: 400px;
+	border-radius: 50%;
+}
+
+
+
+/* 
+You will probably need at least two media queries to handle larger screens.
+Your queries should be configured to work with your content
+*/
+@media screen and (min-width: 450px) {
+	/* Code inside media queries should be indented one step further. */
+
+	/*navigation styles*/
+	/*removing drop-down menu*/
+	.nav-label {
+		display: none;
+	}
+
+	nav {
+		all: unset;
+		display: flex;
+		justify-content: flex-end;
+		grid-column: 4 / 5;
+		align-items: center;
+
+	}
+
+	nav ul {
+
+		display: flex;
+		justify-content: flex-end;
+		margin-right: 2em;
+	}
+
+	nav li {
+		margin-left: 1em;
+
+	}
+
+	nav li a {
+		font-size: 1em;
+	}
+
+
+	h1 {
+		margin-top: 1rem;
+		font-size: 1.3em;
+	}
+
+	h2 {
+		font-size: 1.7em;
+	}
+
+	p {
+		font-size: 1.4em;
+	}
+
+	.reach {
+		margin-top: 27em;
+	}
+
+	.front {
+		margin-top: 5em;
+		font-size: 1em;
+	}
+
+	.title {
+		font-size: 1.7em;
+	}
+
+	/*setting where the portfolio should be placed in grid*/
+	.portfolio {
+		grid-column: 1 / 2;
+		margin-right: 1rem;
+
+	}
+
+	input {
+		height: 47px;
+	}
+
+	header {
+		overflow: auto;
+		display: grid;
+		align-content: space-around;
+		padding: 0 1rem;
+		background-color: hsla(260, 67%, 70%, 0.85);
+		color: white;
+	}
+
+	header nav a {
+		opacity: 1;
+		color: white;
+		transition: color 0.5s;
+	}
+
+	label {
+		font-size: 30px;
+	}
+
+	button {
+		align-items: center;
+		font-size: 1.6em;
+	}
+
+	.button {
+		font-size: 1.3em;
+	}
+
+	::placeholder {
+		font-size: 1.6em;
+	}
+
+
+	body {
+		background-color: rgb(109, 34, 146);
+		color: white;
+	}
+
+	/*search skills styles*/
+	a {
+		font-size: 1em;
+	}
+
+	.results {
+		font-size: 2em;
+	}
+
+	footer {
+		margin-top: 59em;
+	}
+
+}
+
+@media screen and (min-width: 600px) {
+
+	/*navigation styles*/
+	nav {
+		/*unset will remove all previous settings for nav*/
+		all: unset;
+		grid-column: 3 / 5;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+
+	/*Text in index.html*/
+	.front {
+		margin-top: 5em;
+		margin-bottom: 5em;
+
+	}
+
+	::placeholder {
+		font-size: 1.2em;
+	}
+
+	main {
+		height: 800px;
+		overflow: auto;
+	}
+
+	button {
+		font-size: 1.5em;
+	}
+
+	/*btn Go in search*/
+	#btnSearch {
+		font-size: 1.2em;
+		margin-top: 12rem;
+		width: 10%;
+		height: 60px;
+	}
+
+	/*hint in search*/
+	#search {
+		font-size: 1.2em;
+		margin-top: 12rem;
+		margin-left: 0.5em;
+		width: 40%;
+		row-gap: 0.5em;
+	}
+
+	/*Search label in searchskills.html*/
+	label {
+
+		font-size: 2em;
+		margin-top: 12rem;
+	}
+
+	/*label and search bar*/
+	.search-area {
+		display: flex;
+		align-items: center;
+		border: none;
+
+	}
+
+	span {
+		font-size: 2em;
+
+	}
+
+	/*main area in contact.html*/
+	.container {
+		margin-top: 3rem;
+	}
+
+
+
+	.article {
+		all: unset;
+		display: flex;
+		flex-direction: column;
+		row-gap: 0.25em;
+		margin-top: 1rem;
+	}
+
+	details {
+		border: solid white;
+		width: 100%;
+		font-size: 1.7em;
+	}
+
+	form {
+		display: flex;
+		align-items: center;
+		margin-top: .5rem;
+		border: none;
+		font-size: 2.3em;
+	}
+
+
+	nav ul {
+		margin: 0;
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	nav li {
+		margin: .5em;
+		font-size: 2em;
+	}
+
+	nav li a {
+		margin: 0;
+		font-size: .7em;
+	}
+
+	h1 {
+		font-size: 2.5em;
+		color: floralwhite;
+	}
+
+	h2 {
+		margin-top: 2.2em;
+		margin-left: 1em;
+		font-size: 2em;
+	}
+
+
+
+	.portfolio {
+		grid-column: 2 / 3;
+		font-size: 2em;
+	}
+
+	.reach {
+		margin-top: 27em;
+	}
+
+	/*header styles*/
+	header {
+		overflow: auto;
+		padding: 0 1rem;
+		background-color: rgb(165, 141, 239, 0.85);
+		color: white;
+		display: grid;
+		grid-template-columns: auto;
+	}
+
+
+	/*body styles*/
+	body {
+		background-color: rgb(109, 34, 146);
+		font-family: "Play", sans-serif;
+		margin: 0;
+	}
+
+	section h2 {
+		grid-column: 1 / 3;
+
+	}
+
+	img.laptop {
+		width: 500px;
+		height: 400px;
+		border-radius: 20%;
+	}
+
+	footer {
+
+		padding: 0.5em 1rem;
+		color: white;
+		margin-top: 57em;
+	}
+
+	footer a {
+		display: flex;
+		align-content: center;
+
+	}
+
+}
+
+@media screen and (min-width: 700px) {
+	/* Code inside media queries should be indented one step further. */
+
+
+
+	.container {
+		width: auto;
+
+	}
+
+	nav li a {
+		margin: 0;
+		font-size: .8em;
+	}
+
+	.share {
+
+		font-size: 2.2em;
+
+	}
+
+	label {
+		font-size: 2em;
+	}
+
+	::placeholder {
+		font-size: 1.6em;
+	}
+
+	button {
+		font-size: 2em;
+		gap: .5em;
+		border-radius: 20px;
+	}
+
+	.name {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.email {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.reach {
+		margin-top: 26em;
+		height: 400px;
+	}
+
+	img.laptop {
+		width: 600px;
+		height: 700px;
+		border-radius: 80%;
+	}
+
+	footer {
+		margin-top: 60em;
+		display: flex;
+		align-content: baseline;
+		font-size: 1em;
+	}
+}
+
+@media screen and (min-width: 900px) {
+
+	/* Code inside media queries should be indented one step further. */
+	/*Navigation Styling*/
+
+
+	h1 {
+		font-size: 3em;
+		color: aliceblue;
+	}
+
+	/*Setting 4 columns: 1fr - fraction unit (=leftover space),
+	 auto - for Portfolio logo and minmax (min 600px max, 1fr)*/
+	header {
+		display: grid;
+		grid-template-columns: auto;
+		overflow: auto;
+	}
+
+	/*setting where the portfolio should be placed in grid*/
+	.portfolio {
+		grid-column: 1 / 3;
+		font-size: 3em;
+	}
+
+	nav {
+		/*unset will remove all previous settings for nav*/
+		all: unset;
+		grid-column: 3 / 5;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	header nav a {
+		font-size: 1.8em;
+	}
+
+	nav ul {
+		margin-right: 3em;
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	nav li {
+		margin-left: 2em;
+		font-size: 1.5em;
+	}
+
+	nav li a {
+		font-size: 1.2em;
+	}
+
+	img.laptop {
+		width: 900px;
+		height: 500px;
+		border-radius: 60%;
+	}
+
+	details {
+		border: 10px solid gray;
+		padding: 3rem;
+		width: 100%;
+		font-size: 2.5em;
+	}
+
+
+	footer {
+		margin-top: 61em;
+		display: flex;
+		align-content: baseline;
+		font-size: 1em;
+	}
+
+
+}
+
+@media screen and (min-width: 1200px) {
+	header nav a {
+		font-size: 1.8em;
+	}
+
+	.front {
+		font-size: 1.2em;
+	}
+
+	/*btn Go in search*/
+	#btnSearch {
+		font-size: 1.3em;
+		margin-top: 12rem;
+	}
+
+	.container {
+		width: 85%;
+	}
+
+	.box {
+		width: 75%;
+	}
+
+	.reach {
+		font-size: 1.2em;
+		gap: .8em;
+	}
+
+	.reach {
+		margin-top: 20em;
+	}
+
+}
